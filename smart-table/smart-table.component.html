@@ -1,0 +1,113 @@
+<div class="row">
+  <div class="col-md-12 col-lg-12 col-xxxl-6">
+        <!-- <button (click)="openWindowForm()" nbButton>Open window form</button> -->
+        <nb-card-header>Create User Role</nb-card-header>
+        <form [formGroup]="myForm" (ngSubmit)="postData()">
+          <div class="row g-3">
+            <div class="col">
+              <div class="mb-3">
+                <div class="form-group">
+                  <label>User Role</label>
+                  
+                    <input
+                      type="text"
+                      class="form-control"
+                      style="border: none"
+                      id="name"
+                      formControlName="name"
+                    />
+                    <i class="fa fa-user icon" style="font-size: 24px"></i>
+                  <div
+                    class="form-control is-invalid"
+                    *ngIf="fdata['name'].invalid && fdata['name'].touched"
+                  >
+                    <div
+                      *ngIf="
+                        fdata['name'].errors &&
+                        fdata['name'].errors['required']
+                      "
+                    >
+                      Please Enter name
+                    </div>
+                    <div
+                      *ngIf="
+                        fdata['name'].errors &&
+                        fdata['name'].errors['pattern']
+                      "
+                    >
+                    name is not Valid!!
+                    </div>
+                    <div
+                      *ngIf="
+                        fdata['name'].errors &&
+                        fdata['name'].errors['minlength']
+                      "
+                    >
+                      enter more than 2 characters!!
+                    </div>
+                    <div
+                      *ngIf="
+                        fdata['name'].errors &&
+                        fdata['name'].errors['maxlength']
+                      "
+                    >
+                      Name should be less than 20 characters!!
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button
+            style="width: 100%"
+            type="submit"
+            class="btn btn-success"
+            [disabled]="myForm.invalid"
+          >
+            Register
+          </button>
+     
+  </div>
+  </form>
+        <!-- <button (click)="openWindow(contentTemplate)" nbButton>Create User Role</button> -->
+      </div>
+  </div>
+<nb-card>
+  <nb-card-header>
+    Smart Table
+  </nb-card-header>
+
+  <nb-card-body>
+   
+      <div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Sr No</th>
+            <th scope="col">UserRole</th>
+            <th scope="col">Status</th>
+            
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let u of UsersRoleList">
+            <th scope="row">1</th>
+            <td>{{u.name}}</td>
+            <td>{{u.status}}</td>
+          
+            <td>
+
+              <button type="button" class="btn btn-success" (click)="update(u._id)"><i class="fas fa-edit"></i></button>
+            <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+            </td>
+          </tr>
+         </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+   
+  </nb-card-body>
+</nb-card>

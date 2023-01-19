@@ -1,0 +1,108 @@
+@import '../../../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@import '../../../@theme/styles/themes';
+@import '../../../@theme/styles/themes';
+.container {
+    width: 70%;
+    /* height: 732px; */
+    box-shadow: grey 1px 1px 16px 4px;
+    margin-top: -1;
+}
+.center {
+    display: block;
+   
+    margin-left: auto;
+    margin-right: auto;
+   height:60px,
+}
+.mt{
+    margin-top: 13px;
+}
+.icon {
+    font-size: 24px;
+    margin-top: 6px;
+    margin-right: 10px;
+}
+
+button.btn.btn-success {
+    margin-top: 3px;
+        margin-bottom: 20px;
+ 
+            color: #fff;
+            background-color: #3f51b5;
+            border-color: #3f51b5;
+}
+
+h4 {
+    text-align: center;
+    margin: 15px;
+    padding-top: 15px;
+
+}
+
+.a1 {
+    display: flex;
+    border: 1px solid black;
+}
+
+.is-invalid {
+    color: red;
+    border: none;
+}
+.container {
+  padding: 2rem 0rem;
+}
+
+h4 {
+  margin: 2rem 0rem 1rem;
+}
+
+.table-image {
+  td, th {
+    vertical-align: middle;
+  }
+}
+input {
+    border: solid black 1px;
+}
+@include nb-install-component() {
+  button + button {
+    margin-left: 2rem;
+  }
+
+  @include media-breakpoint-down(xxl) {
+    nb-card-body {
+      display: flex;
+    }
+
+    button {
+      flex: 1;
+      padding: 0.8rem;
+    }
+  }
+
+  @include media-breakpoint-down(is) {
+    nb-card-body {
+      display: block;
+    }
+
+    button {
+      + button {
+        margin-left: 0;
+      }
+
+      width: 100%;
+      display: block;
+      margin-bottom: 2rem;
+      padding: 0.75rem;
+    }
+  }
+}
+
+@include nb-install-component() {
+  nb-card {
+    transform: translate3d(0, 0, 0);
+  }
+}
